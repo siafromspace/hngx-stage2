@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+header {
+  background-image: url('./assets/images/hero-bg.svg');
+  /* Other background properties */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-size: cover;
+  padding: 1rem 3rem;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+header .description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 25%;
+}
+span {
+  display: block;
+}
+header h1 {
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+}
+.description p {
+  color: white;
+}
+.description button {
+  border-radius: 6px;
+  background: var(--rose-700, #BE123C);
+  border: none;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  padding: 6px 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px; /* 171.429% */
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+button span {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+.movies {
+  padding: 3rem 6rem;
+}
+.movie-card {
+  cursor: pointer;
+}
+.movies-title {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.movies-title p {
+  color: var(--rose-700, #BE123C);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  cursor: pointer;
+}
+.movie-card img {
+  width: 250px;
+  height: 370px;
+  object-fit: cover;
+}
+.movies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+.movie-card-details p {
+  color: var(--gray-400, #9CA3AF);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+}
+.movie-card-details h2 {
+  color: var(--gray-900, #111827);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+}
+footer {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+footer .footer-icons > * {
+  width: 24px;
+  height: 27.429px;
+  margin-right: 20px;
+  color: #111827;
+}
+footer .footer-links {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  cursor: pointer;
+  color: var(--gray-900, #111827);
+  font-size: 18px;
+  font-weight: 700;
+}
+footer .copyright {
+  color: var(--gray-500, #6B7280);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
