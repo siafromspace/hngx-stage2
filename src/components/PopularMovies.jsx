@@ -10,7 +10,7 @@ export default function PopularMovies({popularMovies}) {
         </div>
         <div className='movies-list'>
             {popularMovies.slice(0, 10).map(movie => (
-                <MovieCard moviePoster={movie.backdrop_path} movieTitle={movie.title} movieReleaseDate={movie.release_date} movieLanguage={movie.original_language} />
+                <MovieCard moviePoster={movie.backdrop_path} movieTitle={movie.title} movieReleaseDate={movie.release_date} movieLanguage={movie.original_language} movieId={movie.id} />
             ))}
         </div>
     </div>

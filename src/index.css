@@ -103,6 +103,22 @@ button span {
   font-weight: 700;
   line-height: normal;
 }
+.movie-details {
+  padding: 2rem;
+}
+.movie-details img {
+  width: 100%;
+  object-fit: contain;
+}
+.loader-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+}
+.loader {
+  max-width: 100%;
+}
 footer {
   padding: 3rem;
   display: flex;

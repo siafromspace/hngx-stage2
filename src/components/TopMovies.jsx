@@ -11,9 +11,10 @@ export default function TopMovies({topMovies}) {
         </div>
         <div className='movies-list'>
             {topMovies.slice(0, 10).map(movie => (
-                <MovieCard moviePoster={movie.backdrop_path} movieTitle={movie.title} movieReleaseDate={movie.release_date} movieLanguage={movie.original_language} />
+                <MovieCard moviePoster={movie.backdrop_path} movieTitle={movie.title} movieReleaseDate={movie.release_date} movieLanguage={movie.original_language} movieId={movie.id} />
             ))}
+            {/* {!topMovies && <img src={Loader} alt="loader" />} */}
         </div>
     </div>
-  )
+  ) 
 }
