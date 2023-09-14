@@ -6,13 +6,13 @@ import Footer from './Footer';
 import Loader from "../assets/images/loader.svg"
 import SearchResults from './SearchResults';
 
-function Homepage() {
+const Homepage = () => {
   const [query, setQuery] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [topMovies, setTopMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([])
   const [searchResults, setSearchResults] = useState(null)
-  const api_key = '4ccaf9505cc3bec7783ded09af8edbe0'; // Replace with your actual API key
+  const api_key = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     // Fetch popular movies

@@ -11,7 +11,6 @@ export default function Hero({query, setQuery, searchMovies}) {
     e.preventDefault(); // Prevent form submission
     searchMovies(query);
   };
-  console.log(query)
   return (
     <header>
         <nav>

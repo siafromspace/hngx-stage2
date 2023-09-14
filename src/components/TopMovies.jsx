@@ -9,8 +9,8 @@ export default function TopMovies({topMovies}) {
             <p>See More</p>
         </div>
         <div className='movies-list'>
-            {topMovies.slice(0, 10).map(movie => (
-                <MovieCard moviePoster={movie.backdrop_path} movieTitle={movie.title} movieReleaseDate={movie.release_date} movieLanguage={movie.original_language} movieId={movie.id} />
+            {topMovies.slice(0, 10).map((movie, i) => (
+                <MovieCard key={i} moviePoster={movie.backdrop_path} movieTitle={movie.title} movieReleaseDate={movie.release_date} movieLanguage={movie.original_language} movieId={movie.id} />
             ))}
         </div>
     </div>
