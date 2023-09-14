@@ -3,12 +3,17 @@ import {AiFillPlayCircle} from "react-icons/ai"
 import Logo from "../assets/images/logo.svg"
 import Menu from "../assets/images/menu-icon.svg"
 
-export default function Hero() {
+export default function Hero({query, setQuery}) {
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+  console.log(query)
   return (
     <header>
         <nav>
-            <img src={Logo} alt="logo image" />
-            <input type="text" placeholder='What do you want to watch?' />
+            <img src={Logo} alt="logo image" className='logo' />
+            <input type="text" placeholder='What do you want to watch?' value={query}
+        onChange={handleInputChange} />
             <img src={Menu} alt="menu" />
         </nav>
         <div className="description">
