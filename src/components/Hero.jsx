@@ -1,19 +1,26 @@
 import React from 'react'
-import {AiFillPlayCircle} from "react-icons/ai"
+import {AiFillPlayCircle, AiOutlineSearch} from "react-icons/ai"
 import Logo from "../assets/images/logo.svg"
 import Menu from "../assets/images/menu-icon.svg"
 
-export default function Hero({query, setQuery}) {
+export default function Hero({query, setQuery, searchMovies}) {
   const handleInputChange = (e) => {
     setQuery(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent form submission
+    searchMovies(query);
   };
   console.log(query)
   return (
     <header>
         <nav>
             <img src={Logo} alt="logo image" className='logo' />
-            <input type="text" placeholder='What do you want to watch?' value={query}
-        onChange={handleInputChange} />
+            <div className='search-container'>
+              <input type="text" placeholder='What do you want to watch?' value={query}
+          onChange={handleInputChange} />
+          <AiOutlineSearch className='search-icon' onClick={handleSubmit} />
+            </div>
             <img src={Menu} alt="menu" />
         </nav>
         <div className="description">

@@ -11,7 +11,7 @@ function Homepage() {
   const [isLoading, setIsLoading] = useState(true)
   const [topMovies, setTopMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([])
-  const [searchResults, setSearchResults] = useState([])
+  const [searchResults, setSearchResults] = useState(null)
   const api_key = '4ccaf9505cc3bec7783ded09af8edbe0'; // Replace with your actual API key
 
   useEffect(() => {
@@ -37,7 +37,8 @@ function Homepage() {
             .catch((error) => console.error('Error fetching top-rated movies:', error));
       }, 2000)
 
-    //Fetch search request
+  }, []);
+  const searchMovies = () => {
     setTimeout(() => {
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${query}`)
             .then((response) => response.json())
@@ -47,19 +48,17 @@ function Homepage() {
             })
             .catch((error) => console.error('Error fetching search results:', error));
     }, 1000)
-
-  }, [query]);
-  console.log(searchResults)
+  }
   return (
     <>
-      <Hero query={query} setQuery={setQuery} />
+      <Hero query={query} setQuery={setQuery} searchMovies={searchMovies} />
       {isLoading ? (
         <div className="loader-container">
             <img src={Loader} alt="Loader" className='loader' />
         </div>
       ) : (
       <>
-        {searchResults && query && <SearchResults searchResults = {searchResults} query={query} />}
+        {searchResults !== null && <SearchResults searchResults = {searchResults} query={query} />}
         <TopMovies topMovies={topMovies} /> 
         <PopularMovies popularMovies={popularMovies} />
       </>
