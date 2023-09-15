@@ -462,4 +462,10 @@ footer .copyright {
   .movies {
     padding: 2rem;
   }
+ 
+}
+@media (max-width: 500px) {
+  .movie-card .favorite {
+    right: 100px;
+  }
 }
