@@ -9,7 +9,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />}/>
-        <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path='*' element={<ErrorPage />}/>
       </Routes>
     </Router>
