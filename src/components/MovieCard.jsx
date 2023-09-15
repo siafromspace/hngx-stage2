@@ -17,7 +17,7 @@ export default function MovieCard({moviePoster, movieTitle, movieReleaseDate, mo
         <img data-testid="movie-poster" src={`${tmdbImageUrl}${moviePoster}`} alt="movie poster" />
         <div className='movie-card-details'>
             <p data-testid="movie-release-date">{movieLanguage}, {movieReleaseDate}</p>
-            <Link to={`/movie/${movieId}`}><h2 data-testid="movie-title">{movieTitle}</h2></Link>
+            <Link to={`/movies/${movieId}`}><h2 data-testid="movie-title">{movieTitle}</h2></Link>
         </div>
     </div>
   )
