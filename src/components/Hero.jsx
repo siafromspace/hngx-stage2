@@ -2,6 +2,8 @@ import React from 'react'
 import {AiFillPlayCircle, AiOutlineSearch} from "react-icons/ai"
 import Logo from "../assets/images/logo.svg"
 import Menu from "../assets/images/menu-icon.svg"
+import IMBD from "../assets/images/imbd.svg"
+import RT from "../assets/images/rotten-tomato.svg"
 
 export default function Hero({query, setQuery, searchMovies}) {
   const handleInputChange = (e) => {
@@ -24,7 +26,12 @@ export default function Hero({query, setQuery, searchMovies}) {
         </nav>
         <div className="description">
             <h1><span>John Wick 3:</span><span>Parabellum</span></h1>
-            <div></div>
+            <div className='ratings'>
+              <img src={IMBD} alt="" />
+              <p>86.0/100</p>
+              <img src={RT} alt="" />
+              <p>97%</p>
+            </div>
             <p>John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.</p>
             <button><span><AiFillPlayCircle /></span>Watch trailer</button>
         </div>

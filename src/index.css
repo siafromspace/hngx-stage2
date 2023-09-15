@@ -387,6 +387,10 @@ footer .copyright {
 #error-page p {
   font-size: 23px;
 }
+.ratings {
+  display: flex;
+  gap: 1rem;
+}
 @media (max-width: 896px) {
   header .description {
     width: 50%;
